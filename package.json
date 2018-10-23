@@ -5,10 +5,10 @@
   "scripts": {
     "prestart": "npm install",
     "start": "node ./bin/www",
-    "pretest": "npm install",
-    "test": "./node_modules/.bin/mocha test"
+    "test": "./node_modules/mocha/bin/mocha test"
   },
   "dependencies": {
+    "bluebird": "^3.5.0",
     "body-parser": "~1.17.1",
     "chai": "^4.1.1",
     "chai-as-promised": "^7.1.1",
@@ -24,7 +24,11 @@
     "mocha-multi-reporters": "^1.1.4",
     "morgan": "~1.8.1",
     "serve-favicon": "~2.4.2",
-    "sqlite3": "^3.1.9",
-    "bluebird": "^3.5.0"
+    "sqlite3": "^3.1.9"
+  },
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
   }
 }
