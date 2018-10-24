@@ -37,14 +37,17 @@ const addEvent = async (req, res, next) => {
   // basic same id check, if present return 400
   // else insert
   const {
-    actor, repo,
+    id, actor, repo,
   } = req.body;
-  // Event.find({})
+  const eventInDB = await Event.findById(id);
+  if (eventInDB) {
+    return res.status(400).send({});
+  }
   // check this event
   await createActor(actor);
   await createRepo(repo);
   await createEvent(req.body);
-  res.status(201).send({});
+  return res.status(201).send({});
 };
 
 module.exports = addEvent;
