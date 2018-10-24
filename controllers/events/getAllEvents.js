@@ -17,6 +17,7 @@ const getAllEvents = async (req, res) => {
         attributes: ['id', 'name', 'url'],
       },
     ],
+    order: [['id']],
   });
   return res.status(200).send(events);
 };

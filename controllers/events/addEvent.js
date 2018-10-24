@@ -40,9 +40,9 @@ const addEvent = async (req, res, next) => {
     id, actor, repo,
   } = req.body;
   const [actorInDB, eventInDB, repoInDB] = await Promise.all([
-    Event.findByPrimary(id),
-    Actor.findByPrimary(actor.id),
-    Repo.findByPrimary(repo.id),
+    Actor.findById(actor.id),
+    Event.findById(id),
+    Repo.findById(repo.id),
   ]);
   if (eventInDB) {
     return res.status(400).send({});

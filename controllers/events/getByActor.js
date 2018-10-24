@@ -24,7 +24,7 @@ const getByActor = async (req, res) => {
         attributes: ['id', 'name', 'url'],
       },
     ],
-    order: [['created_at']],
+    order: [['id']],
   });
   return res.status(200).send(events);
 };
