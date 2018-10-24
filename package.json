@@ -5,6 +5,7 @@
   "scripts": {
     "prestart": "npm install",
     "start": "node ./bin/www",
+    "debug": "nodemon --inspect ./bin/www",
     "test": "./node_modules/mocha/bin/mocha test"
   },
   "dependencies": {
