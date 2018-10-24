@@ -39,13 +39,21 @@ const addEvent = async (req, res, next) => {
   const {
     id, actor, repo,
   } = req.body;
-  const eventInDB = await Event.findById(id);
+  const [actorInDB, eventInDB, repoInDB] = await Promise.all([
+    Event.findByPrimary(id),
+    Actor.findByPrimary(actor.id),
+    Repo.findByPrimary(repo.id),
+  ]);
   if (eventInDB) {
     return res.status(400).send({});
   }
   // check this event
-  await createActor(actor);
-  await createRepo(repo);
+  if (!actorInDB) {
+    await createActor(actor);
+  }
+  if (!repoInDB) {
+    await createRepo(repo);
+  }
   await createEvent(req.body);
   return res.status(201).send({});
 };
