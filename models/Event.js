@@ -21,5 +21,7 @@ const Event = sequelize.define('event', {
 
 Event.belongsTo(Actor);
 Event.belongsTo(Repo);
+// For the Actor, avoid circular dependency
+Actor.hasMany(Event);
 
 module.exports = Event;
