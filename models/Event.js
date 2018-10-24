@@ -4,7 +4,10 @@ const Actor = require('./Actor');
 const Repo = require('./Repo');
 
 const Event = sequelize.define('event', {
-  id: Sequelize.NUMBER,
+  id: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+  },
   type: Sequelize.STRING,
   created_at: Sequelize.DATE,
 });
