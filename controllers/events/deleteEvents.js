@@ -1,6 +1,6 @@
 const Event = require('../../models/Event');
 
-const eraseEvents = async (req, res) => {
+const deleteEvents = async (req, res) => {
   await Event.destroy({
     where: {},
     // i think truncate would be fine?
@@ -10,4 +10,4 @@ const eraseEvents = async (req, res) => {
   return res.status(200).send({});
 };
 
-module.exports = eraseEvents;
+module.exports = deleteEvents;
