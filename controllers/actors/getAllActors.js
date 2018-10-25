@@ -21,7 +21,7 @@ const getAllActors = async (req, res) => {
     order: [
       [Sequelize.literal('eventCount'), 'DESC'],
       [Sequelize.literal('latestEvent'), 'DESC'],
-      ['login', 'DESC'],
+      ['login'],
     ],
   });
   const modifiedActors = actors.map(actor => ({
