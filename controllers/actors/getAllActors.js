@@ -9,9 +9,20 @@ const getAllActors = async (req, res) => {
         'id',
         'login',
         'avatar_url',
+        [Sequelize.fn('COUNT', Sequelize.col('events.actorId')), 'eventCount'],
+        [Sequelize.fn('max', Sequelize.col('events.created_at')), 'latestEvent'],
       ],
       exclude: ['createdAt', 'updatedAt'],
     },
+    include: [{
+      model: Event, attributes: [],
+    }],
+    group: ['events.actorId'],
+    order: [
+      [Sequelize.literal('eventCount'), 'DESC'],
+      [Sequelize.literal('latestEvent'), 'DESC'],
+      ['login', 'DESC'],
+    ],
   });
   return res.status(200).send(actors);
 };
