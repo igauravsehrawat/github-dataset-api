@@ -34,6 +34,7 @@ const getStreakInfo = (allEvents) => {
         currentStreak: 0,
         highestStreak: 0,
         lastEvent: created_at,
+        latestEvent: moment(created_at).valueOf(),
         login: event.actor.login,
       };
     }
@@ -45,7 +46,7 @@ const getStreakInfo = (allEvents) => {
 const getStreakInfoArray = streakInfo => Object.keys(streakInfo).map(actorId => ({
   actorId,
   highestStreak: streakInfo[actorId].highestStreak,
-  lastEvent: streakInfo[actorId].lastEvent,
+  latestEvent: streakInfo[actorId].latestEvent,
   login: streakInfo[actorId].login,
 }));
 
@@ -63,7 +64,7 @@ const getStreak = async (req, res) => {
   const streakInfoArray = getStreakInfoArray(streakInfo);
   const sortedStreakInfo = _.orderBy(
     streakInfoArray,
-    ['highestStreak', 'lastEvent', 'login'],
+    ['highestStreak', 'latestEvent', 'login'],
     ['desc', 'desc', 'asc'],
   );
   const actorsIdByStreak = getActorsIdByStreak(sortedStreakInfo);
