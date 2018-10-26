@@ -1,4 +1,3 @@
-// DO NOT PUSH THIS FILE
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 
@@ -71,26 +70,18 @@ describe('git_test ', function () {
               if (e.response.status_code == 404) {
                 continue;
               }
-              expect(ar2.length).to.equal(ar1.length);
-              console.log('this request', e);
-              console.log('this url', e.request.url);
+		 					expect(ar2.length).to.equal(ar1.length);
               for (let k = 0; k < ar1.length; k++) {
                 expect(ar2[k]).to.deep.equal(ar1[k]);
               }
             }
             if (e.request.method == 'POST') {
-              console.log(e);
-              console.log(e.request.url);
               expect(results[j].status).to.equal(e.response.status_code);
             }
             if (e.request.method == 'DELETE') {
-              console.log(e);
-              console.log(e.request.url);
               expect(results[j].status).to.equal(e.response.status_code);
             }
             if (e.request.method == 'PUT') {
-              console.log(e);
-              console.log(e.request.url);
               expect(results[j].status).to.equal(e.response.status_code);
             }
           }
