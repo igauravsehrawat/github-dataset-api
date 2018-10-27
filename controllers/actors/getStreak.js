@@ -38,7 +38,6 @@ const getStreakInfo = (allEvents) => {
         login: event.actor.login,
       };
     }
-    // latestEvent will be lastEvent
   });
   return streakInfo;
 };
