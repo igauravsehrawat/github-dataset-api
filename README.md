@@ -1,21 +1,26 @@
-In this challenge, you are part of a team building a git event tracking platform. One requirement is for a REST API service to provide events information using the Nodejs Express framework. You will need to add functionality to add and delete information as well as to perform some queries. You'll be dealing with typical information for git event data like repository, actor, event type, etc. The team has come up with a set of requirements including filtering and ordering requirements, response codes and error messages for the queries you must implement.
+Context
+---
+Imagine you are part of a team building a git event tracking platform. One requirement is for a REST API service to provide events information using the Nodejs Express framework. You will need to add functionality to add and delete information as well as to perform some queries. You'll be dealing with typical information for git event data like repository, actor, event type, etc. The team has come up with a set of requirements including filtering and ordering requirements, response codes and error messages for the queries you must implement.
 
 The definitions and a detailed requirements list follow. You will be graded on whether your application performs data retrieval and manipulation based on given use cases exactly as described in the requirements.
 
 Each event data is a JSON entry with the following keys:
-`id`: This is the event unique ID.
-`type`: This is the event type.
-`actor`: The actor responsible for the event. The actor itself is a JSON entry consisting of following fields:
-  `id`: This is the actor unique ID.
-  `login`: This is the actor unique login ID.
-  `avatar_url`: This is the actor avatar URL.
-`repo`: The repository to which this event is associated with. The repo itself is a JSON entry consisting of following fields:
-  `id`: This is the repo unique ID.
-  `name`: This is the repo name.
-  `url`: This is the repo URL.
-`created_at`: This is the timestamp for the event creation given in the format yyyy-MM-dd HH:mm:ss. The timezone is UTC +0.
+```
+id: This is the event unique ID.
+type: This is the event type.
+actor: The actor responsible for the event. The actor itself is a JSON entry consisting of following fields:
+  id: This is the actor unique ID.
+  login: This is the actor unique login ID.
+  avatar_url: This is the actor avatar URL.
+repo: The repository to which this event is associated with. The repo itself is a JSON entry consisting of following fields:
+  id: This is the repo unique ID.
+  name: This is the repo name.
+  url: This is the repo URL.
+created_at: This is the timestamp for the event creation given in the format yyyy-MM-dd HH:mm:ss. The timezone is UTC +0.
+```
 
 #### Sample JSON git event object
+```
 {
   "id":4055191679,
   "type":"PushEvent",
@@ -31,7 +36,7 @@ Each event data is a JSON entry with the following keys:
   },
   "created_at":"2015-10-03 06:13:31"
 }
-
+```
 
 The REST service should implement the following functionalities:
 
@@ -51,3 +56,7 @@ The REST service should implement the following functionalities:
 
 
 You should complete the given incomplete project so that it passes all the test cases when running the provided unit tests. The project by default supports the use of SQLite3 database.
+
+# Testing
+
+`npm run test`
