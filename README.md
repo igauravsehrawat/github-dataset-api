@@ -1,5 +1,4 @@
-Context
----
+# Context
 Imagine you are part of a team building a git event tracking platform. One requirement is for a REST API service to provide events information using the Nodejs Express framework. You will need to add functionality to add and delete information as well as to perform some queries. You'll be dealing with typical information for git event data like repository, actor, event type, etc. The team has come up with a set of requirements including filtering and ordering requirements, response codes and error messages for the queries you must implement.
 
 The definitions and a detailed requirements list follow. You will be graded on whether your application performs data retrieval and manipulation based on given use cases exactly as described in the requirements.
@@ -60,3 +59,6 @@ You should complete the given incomplete project so that it passes all the test 
 # Testing
 
 `npm run test`
+
+# Sample requests
+[Sample Requests](./Samples.md)
