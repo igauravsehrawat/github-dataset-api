@@ -8,6 +8,7 @@ Requests are received in the following order and are provided in the test file h
 #### POST /events
 Consider the following POST requests (these are performed in the ascending order of event id):
 
+```
 {
   "id":4055191679,
   "type":"PushEvent",
@@ -158,9 +159,11 @@ Consider the following POST requests (these are performed in the ascending order
   },
   "created_at":"2013-04-17 04:13:31"
 }
+```
 
 #### GET /events/actors/2222918
 The response of the GET request is the following JSON array with the HTTP response code 200:
+```
 [
   {
     "id":3822562012,
@@ -178,10 +181,11 @@ The response of the GET request is the following JSON array with the HTTP respon
     "created_at":"2015-07-15 15:13:31"
   }
 ]
+```
 
 #### GET /actors/streak
 The response of the GET request is the following JSON array with the HTTP response code 200:
-
+```
 [
   {
     "id":4276597,
@@ -234,20 +238,21 @@ The response of the GET request is the following JSON array with the HTTP respon
     "avatar_url":"https://avatars.com/3466404"
   }
 ]
-
+```
 
 #### PUT /actors
 The request is sent with the following body. Response should be an empty body with a status code of 200
-
+```
 {
   "id":3648056,
   "login":"ysims",
   "avatar_url":"https://avatars.com/modified2"
 }
+```
 
 #### GET /events
 The response of the GET request is the following JSON array with the HTTP response code 200:
-
+```
 [
   {
     "id":1319379787,
@@ -400,10 +405,11 @@ The response of the GET request is the following JSON array with the HTTP respon
     "created_at":"2016-04-18 00:13:31"
   }
 ]
+```
 
 #### GET /actors
 The response of the GET request is the following JSON array with the HTTP response code 200:
-
+```
 [
   {
     "id":4276597,
@@ -456,6 +462,7 @@ The response of the GET request is the following JSON array with the HTTP respon
     "avatar_url":"https://avatars.com/3466404"
   }
 ]
+```
 
 #### DELETE /erase
 This request deletes all events and returns an empty body in the response with status code as 200.
