@@ -16,7 +16,7 @@
     "chai-http": "^4.2.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "jade": "~1.11.0",
     "jsonfile": "^3.0.1",
     "lodash": "^4.17.4",
