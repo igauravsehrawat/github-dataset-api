@@ -24,7 +24,7 @@
     "morgan": "^1.9.1",
     "sequelize": "^4.41.0",
     "serve-favicon": "~2.4.2",
-    "sqlite3": "^4.0.6"
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "eslint": "^5.7.0",
